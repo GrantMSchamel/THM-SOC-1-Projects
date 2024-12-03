@@ -7,7 +7,7 @@ In this challenge, I utilized ELK (Elasticsearch, Logstash, Kibana) to investiga
 ## 🔍 Investigation Questions and Answers  
 
 ### 1. How many events were returned for the month of March 2022?  
-**Answer:** 1482  
+**Answer:** 1,482  
 - **Steps Taken:** Edited the calendar in Kibana's Discover tab to select March 1st through April 1st.  
 
 ![Screenshot for Question 1](https://i.imgur.com/rtpuGVS.png)
