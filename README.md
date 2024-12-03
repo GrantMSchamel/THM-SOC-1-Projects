@@ -1,6 +1,6 @@
 # TryHackMe SOC Level 1 Projects Portfolio
 
-This portfolio showcases the projects completed as part of the TryHackMe SOC Level 1 path. Each project includes a brief description and a link to the respective challenge room.
+This portfolio showcases the projects completed as part of the TryHackMe SOC Level 1 path. Each project includes a brief description and a link to the github repository.
 
 ---
 
