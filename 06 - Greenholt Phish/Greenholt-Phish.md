@@ -7,7 +7,7 @@ The task is to investigate the email sample to determine if it is legitimate.
 
 ---
 
-## Questions
+## 🔍 Investigation Questions
 
 ### 1. **What is the Transfer Reference Number listed in the email's Subject?**
 - I found the Transfer Reference Number in the subject line of the email, which is `09674321`.
