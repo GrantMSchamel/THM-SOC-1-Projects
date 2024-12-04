@@ -7,7 +7,8 @@ I investigated a suspicious incident involving a compromised Linux system. Below
 ## 🖥️ Lab Setup  
 
 - **Client Name:** CyberT  
-- **Primary User Account:** cybert  
+- **Primary User Account:** cybert
+- **Scenario:** Hey, kid! Good, you’re here! Not sure if you’ve seen the news, but an employee from the IT department of one of our clients (CyberT) got arrested by the police. The guy was running a successful phishing operation as a side gig. CyberT wants us to check if this person has done anything malicious to any of their assets. Get set up, grab a cup of coffee, and meet me in the conference room. 
 
 ---
 
