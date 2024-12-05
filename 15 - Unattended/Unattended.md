@@ -7,77 +7,93 @@ The investigation utilized disk image analysis and specialized tools provided on
 
 ---
 
-## Questions and Answers  
+## 🔍 Investigation Questions and Answers  
 
 ### 1. **What file type was searched for using the search bar in Windows Explorer?**  
-- I analyzed the `NTUSER.DAT` file using Registry Explorer. Navigating to `WordWheelQuery` under:  
-  **Software -> Microsoft -> Windows -> CurrentVersion -> Explorer**  
-  revealed the searched file type:  
-  **`.pdf`**  
+**Answer:** `.pdf`  
+- **Steps Taken:**  
+  - Analyzed the `NTUSER.DAT` file using Registry Explorer.  
+  - Navigated to `WordWheelQuery` under:  
+    **Software -> Microsoft -> Windows -> CurrentVersion -> Explorer**  
+  - Revealed the searched file type: `.pdf`.  
 
 ![Screenshot](https://i.imgur.com/f767GBb.png)
 
 ---
 
 ### 2. **What top-secret keyword was searched for using the search bar in Windows Explorer?**  
-- By inspecting the `TypedPaths` and `WordWheelQuery` registry keys, and decrypting data using the Data Inspector tool, I found the keyword searched:  
-  **Continental**  
+**Answer:** Continental  
+- **Steps Taken:**  
+  - Inspected the `TypedPaths` and `WordWheelQuery` registry keys.  
+  - Decrypted data using the Data Inspector tool, uncovering the keyword searched: Continental.  
 
 ![Screenshot](https://i.imgur.com/Qu19xqZ.png)
 
 ---
 
 ### 3. **What is the name of the downloaded file to the Downloads folder?**  
-- Using Autopsy, I added the disk image from the `kape-results` directory as a data source and filtered web download activity for the specified timeframe.  
-  **File Name:** `7z2201-x64.exe`  
+**Answer:** `7z2201-x64.exe`  
+- **Steps Taken:**  
+  - Used Autopsy to add the disk image from the `kape-results` directory as a data source.  
+  - Filtered web download activity for the specified timeframe.  
 
 ![Screenshot](https://i.imgur.com/D1zpkIh.png)
 
 ---
 
 ### 4. **When was the file from the previous question downloaded?**  
-- Timestamp found in Autopsy:  
-  **2022-11-19 12:09:19 UTC**  
+**Answer:** 2022-11-19 12:09:19 UTC  
+- **Steps Taken:**  
+  - Timestamp found in Autopsy.  
 
 ![Screenshot](https://i.imgur.com/ffeeWku.png)
 
 ---
 
 ### 5. **Thanks to the previously downloaded file, a PNG file was opened. When was this file opened?**  
-- In Registry Explorer, searching for `.png` under the `RecentDocs` path revealed the timestamp:  
-  **2022-11-19 12:10:21 UTC**  
+**Answer:** 2022-11-19 12:10:21 UTC  
+- **Steps Taken:**  
+  - Searched for `.png` under the `RecentDocs` path in Registry Explorer.  
+  - Revealed the timestamp when the file was opened.  
 
 ![Screenshot](https://i.imgur.com/ffeeWku.png)
 
 ---
 
 ### 6. **A text file was created in the Desktop folder. How many times was this file opened?**  
-- Using `JLECmd`, a tool for parsing shell item metadata, I identified the text file's interaction count:  
-  **2 times**  
+**Answer:** 2 times  
+- **Steps Taken:**  
+  - Used `JLECmd`, a tool for parsing shell item metadata.  
+  - Identified the text file's interaction count.  
 
 ![Screenshot](https://i.imgur.com/8B0UNqK.png)
 
 ---
 
 ### 7. **When was the text file from the previous question last modified?**  
-- Timestamp extracted from `JLECmd` output:  
-  **2022-11-19 12:12 UTC**  
+**Answer:** 2022-11-19 12:12 UTC  
+- **Steps Taken:**  
+  - Timestamp extracted from `JLECmd` output.  
 
 ![Screenshot](https://i.imgur.com/8B0UNqK.png)
 
 ---
 
 ### 8. **The contents of the file were exfiltrated to pastebin.com. What is the generated URL of the exfiltrated data?**  
-- Reviewing web history in Autopsy revealed the Pastebin URL:  
-  **https://pastebin.com/1FQASAav**  
+**Answer:** https://pastebin.com/1FQASAav  
+- **Steps Taken:**  
+  - Reviewed web history in Autopsy.  
+  - Found the Pastebin URL where the exfiltrated data was stored.  
 
 ![Screenshot](https://i.imgur.com/a8bGO4B.png)
 
 ---
 
 ### 9. **What is the string that was copied to the Pastebin URL?**  
-- Located in Autopsy under `Data Artifacts`, the exfiltrated string was:  
-  **ne7AIRhi3PdESy9RnOrN**  
+**Answer:** ne7AIRhi3PdESy9RnOrN  
+- **Steps Taken:**  
+  - Located in Autopsy under `Data Artifacts`.  
+  - Identified the exfiltrated string.  
 
 ![Screenshot](https://i.imgur.com/KvkMIWM.png)
 
@@ -105,4 +121,3 @@ The investigation utilized disk image analysis and specialized tools provided on
 - This investigation highlights the importance of registry analysis and forensic tools in detecting unauthorized activity.  
 - Autopsy and command-line utilities like `JLECmd` provide critical insights into user behavior and data exfiltration.  
 - Maintaining security awareness and auditing unusual behavior is crucial in preventing similar incidents.  
-
