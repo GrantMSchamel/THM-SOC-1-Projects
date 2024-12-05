@@ -10,91 +10,110 @@ This project highlights my ability to investigate phishing campaigns and secure 
 ## 🔍 Investigation Questions and Answers  
 
 ### 1. **Who is the individual who received an email attachment containing a PDF?**  
-- **Answer:** William McClean  
-  I reviewed the emails in the `phish-emails` folder and identified William McClean as the recipient of the PDF attachment.  
+**Answer:** William McClean  
+- **Steps Taken:**  
+  - Reviewed the emails in the `phish-emails` folder.  
+  - Identified William McClean as the recipient of the PDF attachment.  
 
 ![Screenshot](https://i.imgur.com/76BZ7Ey.png)
 
 ---
 
 ### 2. **What email address was used by the adversary to send the phishing emails?**  
-- **Answer:** `Accounts.Payable@groupmarketingonline.icu`  
-  This was retrieved by inspecting the email headers and the "From" address in the phishing emails.  
+**Answer:** `Accounts.Payable@groupmarketingonline.icu`  
+- **Steps Taken:**  
+  - Inspected the email headers and the "From" address in the phishing emails.  
 
 ![Screenshot](https://i.imgur.com/9WHJvuf.png)
 
 ---
 
 ### 3. **What is the redirection URL to the phishing page for Zoe Duncan? (defanged format)**  
-- **Answer:**  
+**Answer:**  
   **`hxxp[://]kennaroads[.]buzz/data/Update365/office365/40e7baa2f826a57fcf04e5202526f8bd/?email=zoe[.]duncan@swiftspend[.]finance&error`**  
-  By examining Zoe Duncan’s phishing email, I located the redirection URL embedded in the message.  
+- **Steps Taken:**  
+  - Examined Zoe Duncan’s phishing email.  
+  - Located the redirection URL embedded in the message.  
 
 ![Screenshot](https://i.imgur.com/sqt0p60.png)
 
 ---
 
 ### 4. **What is the URL to the .zip archive of the phishing kit? (defanged format)**  
-- **Answer:**  
+**Answer:**  
   **`hxxp[://]kennaroads[.]buzz/data/Update365[.]zip`**  
-  The phishing kit was identified in the `/data` directory of the domain.  
+- **Steps Taken:**  
+  - Identified the phishing kit in the `/data` directory of the domain.  
 
 ![Screenshot](https://i.imgur.com/3DUauKo.png)
 
 ---
 
 ### 5. **What is the SHA256 hash of the phishing kit archive?**  
-- **Answer:**  
+**Answer:**  
   **`ba3c15267393419eb08c7b2652b8b6b39b406ef300ae8a18fee4d16b19ac9686`**  
-  After downloading the `.zip` file, I used the `sha256sum` command to calculate the hash.  
+- **Steps Taken:**  
+  - Downloaded the `.zip` file.  
+  - Used the `sha256sum` command to calculate the hash.  
 
 ![Screenshot](https://i.imgur.com/88xaMja.png)
 
 ---
 
 ### 6. **When was the phishing kit archive first submitted?**  
-- **Answer:** 2020-04-08 21:55:50 UTC  
-  This information was retrieved from VirusTotal by searching the SHA256 hash under "First Submission."  
+**Answer:** 2020-04-08 21:55:50 UTC  
+- **Steps Taken:**  
+  - Retrieved submission date from VirusTotal by searching the SHA256 hash under "First Submission."  
 
 ![Screenshot](https://i.imgur.com/auCr7gt.png)
 
 ---
 
 ### 7. **When was the SSL certificate for the phishing domain first logged?**  
-- **Answer:** 2020-06-25  
-  By searching for the domain in VirusTotal, I found the earliest SSL certificate in the Historical SSL Certificates section.  
+**Answer:** 2020-06-25  
+- **Steps Taken:**  
+  - Searched for the domain in VirusTotal.  
+  - Found the earliest SSL certificate in the Historical SSL Certificates section.  
 
 ![Screenshot](https://i.imgur.com/vKsfUql.png)
 
 ---
 
 ### 8. **What was the email address of the user who submitted their password twice?**  
-- **Answer:** michael.ascot@swiftspend.finance  
-  By analyzing the `log.txt` file from the phishing kit directory, I identified Michael Ascot's email being submitted multiple times.  
+**Answer:** michael.ascot@swiftspend.finance  
+- **Steps Taken:**  
+  - Analyzed the `log.txt` file from the phishing kit directory.  
+  - Identified Michael Ascot's email being submitted multiple times.  
 
 ![Screenshot](https://i.imgur.com/rlXCxgC.png)
 
 ---
 
 ### 9. **What was the email address used by the adversary to collect compromised credentials?**  
-- **Answer:** `m3npat@yandex.com`  
-  In the `submit.php` file within the phishing kit, I found the attacker’s email address where credentials were sent.  
+**Answer:** `m3npat@yandex.com`  
+- **Steps Taken:**  
+  - Located the email address in the `submit.php` file within the phishing kit.  
 
 ![Screenshot](https://i.imgur.com/bUVKvvw.png)
 
 ---
 
 ### 10. **What is the email address that ends in "@gmail.com"?**  
-- **Answer:** `jamestanner2299@gmail.com`  
-  Using the `grep` command, I searched for Gmail addresses within the phishing kit and identified this one.  
+**Answer:** `jamestanner2299@gmail.com`  
+- **Steps Taken:**  
+  - Used the `grep` command to search for Gmail addresses within the phishing kit.  
+  - Identified this one.  
 
 ![Screenshot](https://i.imgur.com/jlGoaQ9.png)
 
 ---
 
 ### 11. **What is the hidden flag?**  
-- **Answer:** `THM{pL4y_w1Th_tH3_URL}`  
-  I found the flag at the URL `http://kennaroads.buzz/data/Update365/office365/flag.txt`. It was encoded in Base64 (`fUxSVV8zSHRfaFQxd195NExwe01IVAo=`), and I decoded it using CyberChef.  
+**Answer:** `THM{pL4y_w1Th_tH3_URL}`  
+- **Steps Taken:**  
+  - Found the flag at the URL `http://kennaroads.buzz/data/Update365/office365/flag.txt`.  
+  - The flag was encoded in Base64 (`fUxSVV8zSHRfaFQxd195NExwe01IVAo=`).  
+  - Decoded it using CyberChef.  
 
 ![Screenshot](https://i.imgur.com/HlA00Kq.png)
 
